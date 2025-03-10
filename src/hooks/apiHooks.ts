@@ -190,7 +190,6 @@ const useUser = () => {
 
 const useComment = () => {
   const {getUserById} = useUser();
-  // TODO: implement media/comments resource API connections here
   const postComment = async (
     comment_text: string,
     media_id: number,

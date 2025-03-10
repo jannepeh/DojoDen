@@ -13,19 +13,11 @@ const Comments = ({item}: {item: MediaItemWithOwner}) => {
 
   const initValues = {comment_text: ''};
   const doComment = async () => {
-    // adding comments "locally" (dummy version)
-    // addComment({
-    //   comment_text: inputs.comment_text,
-    //   username: user.user?.username,
-    //   user_id: user.user?.user_id,
-    //   media_id: item.media_id,
-    // });
-
     const token = localStorage.getItem('token');
     if (!token) {
       return;
     }
-    // TODO: add try-catch & user notification
+
     await postComment(inputs.comment_text, item.media_id, token);
     // update comments after post
     getComments();
@@ -72,12 +64,11 @@ const Comments = ({item}: {item: MediaItemWithOwner}) => {
               onChange={handleInputChange}
               autoComplete="off"
               ref={inputRef}
-              // value={inputs.username}
             />
           </div>
           <button
             disabled={!inputs.comment_text}
-            className="mb-1 rounded-xl block p-4 text-center transition-all duration-500 ease-in-out bg-yellow-200 hover:bg-slate-900 text-black hover:text-white w-full"
+            className="mb-1 block w-full rounded-xl bg-yellow-200 p-4 text-center text-black transition-all duration-500 ease-in-out hover:bg-slate-900 hover:text-white"
             type="submit"
           >
             Post

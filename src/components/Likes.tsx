@@ -41,7 +41,6 @@ const Likes = ({item}: {item: MediaItemWithOwner}) => {
     }
     try {
       const userLike = await getUserLike(item.media_id, token);
-      //console.log('getLikes userLike', userLike);
       likeDispatch({type: 'like', like: userLike});
     } catch (e) {
       likeDispatch({type: 'like', like: null});
@@ -51,7 +50,6 @@ const Likes = ({item}: {item: MediaItemWithOwner}) => {
 
   // get like count
   const getLikeCount = async () => {
-    // TODO: get like count and dispatch it to the state
     try {
       const countResponse = await getCountByMediaId(item.media_id);
       likeDispatch({type: 'setLikeCount', count: countResponse.count});
@@ -93,7 +91,7 @@ const Likes = ({item}: {item: MediaItemWithOwner}) => {
     <>
       <p>Likes: {likeState.count}</p>
       <button
-        className="mb-1 rounded-xl block p-4 text-center transition-all duration-500 ease-in-out bg-yellow-200 hover:bg-slate-900 text-black hover:text-white w-full"
+        className="mb-1 block w-full rounded-xl bg-yellow-200 p-4 text-center text-black transition-all duration-500 ease-in-out hover:bg-slate-900 hover:text-white"
         onClick={handleLike}
       >
         {likeState.userLike ? 'Unlike' : 'Like'}
