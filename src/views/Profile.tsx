@@ -5,10 +5,9 @@ const Profile = () => {
 
   return (
     <>
-      <h2>Profile</h2>
       <div className="container mt-5 mb-5">
         <div className="rounded-lg bg-white p-3 pb-15 shadow-md">
-          <h2 className="mb-4 text-2xl font-bold">Profile</h2>
+          <h2 className="mb-4 text-center text-2xl text-black">Profile</h2>
           {user ? (
             <div className="text-center">
               <div className="mb-4">
