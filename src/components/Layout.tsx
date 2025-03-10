@@ -14,14 +14,14 @@ const Layout = () => {
   return (
     <>
       <h1 className="mb-5">Media Sharing App</h1>
-      <div>
-        <nav>
-          <ul className="m-0 flex list-none justify-end rounded-2xl bg-stone-600 p-0">
+      <div className="flex">
+        <nav className="fixed left-0 top-0 h-full bg-yellow-200 p-4">
+          <ul className="m-0 flex flex-col list-none">
             {user ? (
               <>
                 <li>
                   <Link
-                    className="block p-4 text-center transition-all duration-500 ease-in-out hover:bg-stone-700"
+                    className="rounded-xl block p-4 text-center transition-all duration-500 ease-in-out hover:bg-slate-900 text-black hover:text-white"
                     to="/Home"
                   >
                     Home
@@ -29,7 +29,7 @@ const Layout = () => {
                 </li>
                 <li>
                   <Link
-                    className="block p-4 text-center transition-all duration-500 ease-in-out hover:bg-stone-700"
+                    className="rounded-xl block p-4 text-center transition-all duration-500 ease-in-out hover:bg-slate-900 text-black hover:text-white"
                     to="/profile"
                   >
                     Profile
@@ -37,7 +37,7 @@ const Layout = () => {
                 </li>
                 <li>
                   <Link
-                    className="block p-4 text-center transition-all duration-500 ease-in-out hover:bg-stone-700"
+                    className="rounded-xl block p-4 text-center transition-all duration-500 ease-in-out hover:bg-slate-900 text-black hover:text-white"
                     to="/upload"
                   >
                     Upload
@@ -45,7 +45,7 @@ const Layout = () => {
                 </li>
                 <li>
                   <Link
-                    className="block p-4 text-center transition-all duration-500 ease-in-out hover:bg-stone-700"
+                    className="rounded-xl block p-4 text-center transition-all duration-500 ease-in-out hover:bg-slate-900 text-black hover:text-white"
                     to="/logout"
                   >
                     Logout
@@ -55,7 +55,7 @@ const Layout = () => {
             ) : (
               <li>
                 <Link
-                  className="block p-4 text-center transition-all duration-500 ease-in-out hover:bg-stone-700"
+                  className="rounded-xl block p-4 text-center transition-all duration-500 ease-in-out hover:bg-slate-900 text-black hover:text-white"
                   to="/"
                 >
                   Login
@@ -64,11 +64,11 @@ const Layout = () => {
             )}
           </ul>
         </nav>
-        <main>
+        <main className="flex-grow">
           <Outlet />
         </main>
-        <footer></footer>
       </div>
+      <footer></footer>
     </>
   );
 };

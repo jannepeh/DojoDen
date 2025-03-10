@@ -32,12 +32,12 @@ const LoginForm = (props: Props) => {
 
   return (
     <>
-      <div className="mt-10 flex justify-center">
+      <div className="mt-5 flex justify-center">
         <video
-          src="../hybrid-react-test/src/media/test.mp4"
+          src="../hybrid-react-test/src/media/vid.mp4"
           controls
-          width="250"
-          height="250"
+          width="1080"
+          height="500"
           className="rounded-xl"
         ></video>
       </div>
