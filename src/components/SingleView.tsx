@@ -1,4 +1,5 @@
 import {MediaItemWithOwner} from 'hybrid-types/DBTypes';
+import React from 'react';
 
 const SingleView = (props: {
   item: MediaItemWithOwner | undefined;

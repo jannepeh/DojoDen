@@ -17,7 +17,7 @@ const Login = () => {
       )}
       <div className="mt-3 flex justify-center">
         <button
-          className="m-[5px] cursor-pointer rounded-sm border border-solid border-white bg-white p-[10px] text-black"
+          className="m-[5px] cursor-pointer rounded-sm bg-yellow-200 p-[10px] text-black hover:text-white hover:bg-slate-900 transition duration-300 ease-in-out"
           onClick={toggleRegister}
         >
           {displayRegister ? 'Login?' : 'Register?'}

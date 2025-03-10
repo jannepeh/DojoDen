@@ -1,6 +1,7 @@
 import {Link, Outlet} from 'react-router';
 import {useUserContext} from '../hooks/ContextHooks';
 import {useEffect} from 'react';
+import judoIcon from '../media/judo.png'; // Import the image
 
 const Layout = () => {
   // jos käyttäjää ei ole, kutsu handleAutoLogin()
@@ -15,13 +16,18 @@ const Layout = () => {
     <>
       <h1 className="mb-5">Media Sharing App</h1>
       <div className="flex">
-        <nav className="fixed left-0 top-0 h-full bg-yellow-200 p-4">
-          <ul className="m-0 flex flex-col list-none">
+        <nav className="fixed top-0 left-0 h-full bg-yellow-200 p-4">
+          <ul className="m-0 flex list-none flex-col">
             {user ? (
               <>
+                <img
+                  src={judoIcon}
+                  alt="Judo Icon"
+                  className="mb-10 ml-[20px] inline-block h-[45px] w-[45px]"
+                />
                 <li>
                   <Link
-                    className="rounded-xl block p-4 text-center transition-all duration-500 ease-in-out hover:bg-slate-900 text-black hover:text-white"
+                    className="mb-1 block rounded-xl p-4 text-center text-black transition-all duration-500 ease-in-out hover:bg-slate-900 hover:text-white"
                     to="/Home"
                   >
                     Home
@@ -29,7 +35,7 @@ const Layout = () => {
                 </li>
                 <li>
                   <Link
-                    className="rounded-xl block p-4 text-center transition-all duration-500 ease-in-out hover:bg-slate-900 text-black hover:text-white"
+                    className="mb-1 block rounded-xl p-4 text-center text-black transition-all duration-500 ease-in-out hover:bg-slate-900 hover:text-white"
                     to="/profile"
                   >
                     Profile
@@ -37,7 +43,7 @@ const Layout = () => {
                 </li>
                 <li>
                   <Link
-                    className="rounded-xl block p-4 text-center transition-all duration-500 ease-in-out hover:bg-slate-900 text-black hover:text-white"
+                    className="mb-1 block rounded-xl p-4 text-center text-black transition-all duration-500 ease-in-out hover:bg-slate-900 hover:text-white"
                     to="/upload"
                   >
                     Upload
@@ -45,7 +51,7 @@ const Layout = () => {
                 </li>
                 <li>
                   <Link
-                    className="rounded-xl block p-4 text-center transition-all duration-500 ease-in-out hover:bg-slate-900 text-black hover:text-white"
+                    className="mb-1 block rounded-xl p-4 text-center text-black transition-all duration-500 ease-in-out hover:bg-slate-900 hover:text-white"
                     to="/logout"
                   >
                     Logout
@@ -53,14 +59,30 @@ const Layout = () => {
                 </li>
               </>
             ) : (
-              <li>
-                <Link
-                  className="rounded-xl block p-4 text-center transition-all duration-500 ease-in-out hover:bg-slate-900 text-black hover:text-white"
-                  to="/"
-                >
-                  Login
-                </Link>
-              </li>
+              <>
+                <img
+                  src={judoIcon}
+                  alt="Judo Icon"
+                  className="mb-10 ml-[20px] inline-block h-[45px] w-[45px]"
+                />
+
+                <li>
+                  <Link
+                    className="mb-1 block rounded-xl p-4 text-center text-black transition-all duration-500 ease-in-out hover:bg-slate-900 hover:text-white"
+                    to="/"
+                  >
+                    Login
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="mb-1 block rounded-xl p-4 text-center text-black transition-all duration-500 ease-in-out hover:bg-slate-900 hover:text-white"
+                    to="/Home"
+                  >
+                    Home
+                  </Link>
+                </li>
+              </>
             )}
           </ul>
         </nav>

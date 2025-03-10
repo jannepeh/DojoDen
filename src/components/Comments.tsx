@@ -77,7 +77,7 @@ const Comments = ({item}: {item: MediaItemWithOwner}) => {
           </div>
           <button
             disabled={!inputs.comment_text}
-            className="my-2.5 block w-4/5 rounded-md bg-stone-500 p-2 text-center transition-all duration-500 ease-in-out hover:bg-stone-700"
+            className="mb-1 rounded-xl block p-4 text-center transition-all duration-500 ease-in-out bg-yellow-200 hover:bg-slate-900 text-black hover:text-white w-full"
             type="submit"
           >
             Post

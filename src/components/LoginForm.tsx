@@ -36,7 +36,7 @@ const LoginForm = (props: Props) => {
         <video
           src="../hybrid-react-test/src/media/vid.mp4"
           controls
-          width="1080"
+          width="1500"
           height="500"
           className="rounded-xl"
         ></video>
@@ -71,13 +71,13 @@ const LoginForm = (props: Props) => {
           />
         </div>
         <button
-          className="m-[10px] cursor-pointer rounded-sm border border-solid border-white bg-white p-[10px] text-black"
+          className="m-[5px] cursor-pointer rounded-sm transition duration-300 ease-in-out bg-yellow-200 p-[10px] text-black hover:text-white hover:bg-slate-900"
           type="submit"
         >
           Login
         </button>
         <button
-          className="cursor-pointer rounded-sm border border-solid border-white bg-white p-[10px] text-black"
+          className="m-[5px] cursor-pointer rounded-sm transition duration-300 ease-in-out bg-yellow-200 p-[10px] text-black hover:text-white hover:bg-slate-900"
           onClick={toggleRegister}
         >
           Register

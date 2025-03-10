@@ -27,11 +27,11 @@ const MediaRow = (props: MediaItemProps) => {
         <p className="max-w-full overflow-clip font-bold text-nowrap text-ellipsis text-stone-300">
           {item.description}
         </p>
-        <div className="my-2 rounded-md border-1 border-stone-400 p-2">
+        <div className="my-2">
           <Link
             to="/single"
             state={{item}}
-            className="block w-full cursor-pointer bg-blue-600 p-2 text-center transition-all duration-500 ease-in-out hover:bg-blue-800"
+            className="mb-1 rounded-xl block p-4 text-center transition-all duration-500 ease-in-out bg-yellow-200 hover:bg-slate-900 text-black hover:text-white"
           >
             Show
           </Link>
@@ -41,7 +41,7 @@ const MediaRow = (props: MediaItemProps) => {
                 onClick={() => {
                   console.log('Modify clicked!', item.media_id);
                 }}
-                className="block w-full cursor-pointer bg-green-600 p-2 text-center transition-all duration-500 ease-in-out hover:bg-green-800"
+                className="rounded-xl mb-1 block w-full cursor-pointer bg-green-600 p-4 text-center transition-all duration-500 ease-in-out hover:bg-green-800"
               >
                 Modify
               </button>
@@ -49,7 +49,7 @@ const MediaRow = (props: MediaItemProps) => {
                 onClick={() => {
                   console.log('Delete clicked!', item.media_id);
                 }}
-                className="block w-full cursor-pointer bg-red-600 p-2 text-center transition-all duration-500 ease-in-out hover:bg-red-800"
+                className="rounded-xl block w-full cursor-pointer bg-red-600 p-4 text-center transition-all duration-500 ease-in-out hover:bg-red-800"
               >
                 Delete
               </button>
