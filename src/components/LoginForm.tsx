@@ -71,13 +71,13 @@ const LoginForm = (props: Props) => {
           />
         </div>
         <button
-          className="m-[10px] cursor-pointer rounded-sm border border-solid border-white bg-white p-[10px] text-black"
+          className="m-[5px] cursor-pointer rounded-sm bg-yellow-200 p-[10px] text-black transition duration-300 ease-in-out hover:bg-slate-900 hover:text-white"
           type="submit"
         >
           Login
         </button>
         <button
-          className="cursor-pointer rounded-sm border border-solid border-white bg-white p-[10px] text-black"
+          className="m-[5px] cursor-pointer rounded-sm bg-yellow-200 p-[10px] text-black transition duration-300 ease-in-out hover:bg-slate-900 hover:text-white"
           onClick={toggleRegister}
         >
           Register
