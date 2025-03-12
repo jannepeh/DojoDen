@@ -8,7 +8,7 @@ DojoDen started out as a media sharing app to share content based on diffrent ka
 ## Installation
 ```sh
 # Clone the repository
-git clone https://github.com/jannepeh/dojoden.git
+git clone https://github.com/jannepeh/DojoDen.git
 cd DojoDen
 
 # Install dependencies
