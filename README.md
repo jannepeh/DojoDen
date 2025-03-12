@@ -4,6 +4,10 @@
 ## Description
 DojoDen started out as a media sharing app to share content based on diffrent karate styles kicks and katas and all the above
 
+## Link to the app
+[Link to the app](https://users.metropolia.fi/~jannepeh/React-yksilo/ "Päästäkää läpi pliis")
+
+
 
 ## Installation
 ```sh
