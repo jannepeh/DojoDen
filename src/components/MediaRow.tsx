@@ -1,6 +1,7 @@
-import {Link} from 'react-router-dom';
+import {Link, NavigateFunction, useNavigate} from 'react-router-dom';
 import {MediaItemWithOwner} from 'hybrid-types/DBTypes';
 import {useUserContext} from '../hooks/ContextHooks';
+import {useMedia} from '../hooks/apiHooks';
 
 type MediaItemProps = {
   item: MediaItemWithOwner;
@@ -10,6 +11,25 @@ type MediaItemProps = {
 const MediaRow = (props: MediaItemProps) => {
   const {item} = props;
   const {user} = useUserContext();
+  const {deleteMedia} = useMedia();
+  const navigate: NavigateFunction = useNavigate();
+
+  const handeDelete = async () => {
+    try {
+      const token = await localStorage.getItem('token');
+
+      if (!token) {
+        console.log('Token not found');
+        return;
+      }
+      const deleteResponse = await deleteMedia(item.media_id, token);
+      console.log(deleteResponse);
+      navigate(-1);
+      alert('Post deleted, please refresh the page');
+    } catch (error) {
+      console.error((error as Error).message);
+    }
+  };
 
   return (
     <article className="w-full rounded-md bg-stone-600">
@@ -31,7 +51,7 @@ const MediaRow = (props: MediaItemProps) => {
           <Link
             to="/single"
             state={{item}}
-            className="mb-1 rounded-xl block p-4 text-center transition-all duration-500 ease-in-out bg-yellow-200 hover:bg-slate-900 text-black hover:text-white"
+            className="mb-1 block rounded-xl bg-yellow-200 p-4 text-center text-black transition-all duration-500 ease-in-out hover:bg-slate-900 hover:text-white"
           >
             Show
           </Link>
@@ -41,15 +61,13 @@ const MediaRow = (props: MediaItemProps) => {
                 onClick={() => {
                   console.log('Modify clicked!', item.media_id);
                 }}
-                className="rounded-xl mb-1 block w-full cursor-pointer bg-green-600 p-4 text-center transition-all duration-500 ease-in-out hover:bg-green-800"
+                className="mb-1 block w-full cursor-pointer rounded-xl bg-green-600 p-4 text-center transition-all duration-500 ease-in-out hover:bg-green-800"
               >
                 Modify
               </button>
               <button
-                onClick={() => {
-                  console.log('Delete clicked!', item.media_id);
-                }}
-                className="rounded-xl block w-full cursor-pointer bg-red-600 p-4 text-center transition-all duration-500 ease-in-out hover:bg-red-800"
+                onClick={handeDelete}
+                className="block w-full cursor-pointer rounded-xl bg-red-600 p-4 text-center transition-all duration-500 ease-in-out hover:bg-red-800"
               >
                 Delete
               </button>

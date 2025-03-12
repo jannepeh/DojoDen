@@ -34,9 +34,9 @@ const LoginForm = (props: Props) => {
     <>
       <div className="mt-5 flex justify-center">
         <video
-          src="../hybrid-react-test/src/media/vid.mp4"
+          src="https://users.metropolia.fi/~jannepeh/images/vid.mp4"
           controls
-          width="1500"
+          width="1080"
           height="500"
           className="rounded-xl"
         ></video>
@@ -71,13 +71,13 @@ const LoginForm = (props: Props) => {
           />
         </div>
         <button
-          className="m-[5px] cursor-pointer rounded-sm transition duration-300 ease-in-out bg-yellow-200 p-[10px] text-black hover:text-white hover:bg-slate-900"
+          className="m-[10px] cursor-pointer rounded-sm border border-solid border-white bg-white p-[10px] text-black"
           type="submit"
         >
           Login
         </button>
         <button
-          className="m-[5px] cursor-pointer rounded-sm transition duration-300 ease-in-out bg-yellow-200 p-[10px] text-black hover:text-white hover:bg-slate-900"
+          className="cursor-pointer rounded-sm border border-solid border-white bg-white p-[10px] text-black"
           onClick={toggleRegister}
         >
           Register

@@ -1,7 +1,6 @@
 import {Link, Outlet} from 'react-router';
 import {useUserContext} from '../hooks/ContextHooks';
 import {useEffect} from 'react';
-import judoIcon from '../media/judo.png'; // Import the image
 
 const Layout = () => {
   // jos käyttäjää ei ole, kutsu handleAutoLogin()
@@ -21,7 +20,7 @@ const Layout = () => {
             {user ? (
               <>
                 <img
-                  src={judoIcon}
+                  src="https://users.metropolia.fi/~jannepeh/images/judo.png"
                   alt="Judo Icon"
                   className="mb-10 ml-[20px] inline-block h-[45px] w-[45px]"
                 />
@@ -61,7 +60,7 @@ const Layout = () => {
             ) : (
               <>
                 <img
-                  src={judoIcon}
+                  src="https://users.metropolia.fi/~jannepeh/images/judo.png"
                   alt="Judo Icon"
                   className="mb-10 ml-[20px] inline-block h-[45px] w-[45px]"
                 />
