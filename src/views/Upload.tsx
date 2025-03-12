@@ -34,9 +34,7 @@ const Upload = () => {
       const fileResult = await postFile(file, token);
       await postMedia(fileResult, inputs, token);
       setUploading(false);
-      // redirect to home
-      // navigate('/');
-      //or notify user & clear inputs
+
       setUploadResult('Media file uploaded!');
       resetForm();
     } catch (e) {
