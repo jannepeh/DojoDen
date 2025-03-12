@@ -12,6 +12,8 @@ const Comments = ({item}: {item: MediaItemWithOwner}) => {
   const {postComment, getCommentsByMediaId} = useComment();
 
   const initValues = {comment_text: ''};
+
+  // Function to handle posting a comment
   const doComment = async () => {
     const token = localStorage.getItem('token');
     if (!token) {
@@ -19,9 +21,9 @@ const Comments = ({item}: {item: MediaItemWithOwner}) => {
     }
 
     await postComment(inputs.comment_text, item.media_id, token);
-    // update comments after post
+    // Update comments after posting
     getComments();
-    // reset form
+    // Reset form
     if (inputRef.current) {
       inputRef.current.value = '';
     }
@@ -33,6 +35,7 @@ const Comments = ({item}: {item: MediaItemWithOwner}) => {
     initValues,
   );
 
+  // Function to fetch comments for the media item
   const getComments = async () => {
     try {
       const comments = await getCommentsByMediaId(item.media_id);
@@ -43,6 +46,7 @@ const Comments = ({item}: {item: MediaItemWithOwner}) => {
     }
   };
 
+  // Fetch comments when the component mounts
   useEffect(() => {
     getComments();
   }, []);

@@ -3,8 +3,10 @@ import {useUserContext} from '../hooks/ContextHooks';
 import {useEffect} from 'react';
 
 const Layout = () => {
-  // jos käyttäjää ei ole, kutsu handleAutoLogin()
+  // Get user and handleAutoLogin from context
   const {user, handleAutoLogin} = useUserContext();
+
+  // Auto-login if user is not logged in
   useEffect(() => {
     if (!user) {
       handleAutoLogin();
@@ -19,6 +21,7 @@ const Layout = () => {
           <ul className="m-0 flex list-none flex-col">
             {user ? (
               <>
+                {/* Display user-specific navigation */}
                 <img
                   src="https://users.metropolia.fi/~jannepeh/images/judo.png"
                   alt="Judo Icon"
@@ -59,12 +62,12 @@ const Layout = () => {
               </>
             ) : (
               <>
+                {/* Display guest-specific navigation */}
                 <img
                   src="https://users.metropolia.fi/~jannepeh/images/judo.png"
                   alt="Judo Icon"
                   className="mb-10 ml-[20px] inline-block h-[45px] w-[45px]"
                 />
-
                 <li>
                   <Link
                     className="mb-1 block rounded-xl p-4 text-center text-black transition-all duration-500 ease-in-out hover:bg-slate-900 hover:text-white"
