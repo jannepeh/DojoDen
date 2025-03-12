@@ -21,13 +21,6 @@ npm i
 npm run dev
 ```
 
-## Configuration
-Modify the `.env` file as needed:
-```ini
-DATABASE_URL=your_database_url
-PORT=3000
-```
-
 ## Contributing
 1. Fork the repository
 2. Create a new branch (`git checkout -b feature-branch`)
